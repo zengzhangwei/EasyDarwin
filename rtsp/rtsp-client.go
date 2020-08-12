@@ -635,7 +635,7 @@ func (client *RTSPClient) RequestWithPath(method string, path string, headers ma
 		//		return
 		//	}
 		//}
-		if strings.Index(strings.ToLower(s), "content-length:") == 0 {
+		if strings.Index(s, "Content-Length:") == 0 {
 			splits := strings.Split(s, ":")
 			contentLen, err = strconv.Atoi(strings.TrimSpace(splits[1]))
 			if err != nil {
